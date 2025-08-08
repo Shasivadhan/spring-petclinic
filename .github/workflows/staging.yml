@@ -2,10 +2,20 @@ name: Build - Staging Environment
 
 on:
   workflow_dispatch:
+    inputs:
+      java-version:
+        description: 'Java Version'
+        required: true
+        default: '17'
+
+      environment:
+        description: 'Environment Name'
+        required: true
+        default: 'staging'
 
 jobs:
   staging-build:
     uses: ./.github/workflows/ci-template.yml
     with:
-      java-version: '17'
-      environment: 'staging'
+      java-version: ${{ inputs.java-version }}
+      environment: ${{ inputs.environment }}
