@@ -2,7 +2,7 @@
 name: Reusable Maven CI Workflow
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       java-version:
         required: true
