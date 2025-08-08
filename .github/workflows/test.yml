@@ -1,0 +1,13 @@
+name: Build - Test Environment
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-build:
+    uses: ./.github/workflows/ci-template.yml
+    with:
+      java-version: '17'
+      environment: 'test'
