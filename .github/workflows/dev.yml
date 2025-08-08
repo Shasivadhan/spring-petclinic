@@ -1,0 +1,14 @@
+# .github/workflows/dev.yml
+name: CI - Dev Environment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-ci-template:
+    uses: ./.github/workflows/ci-template.yml
+    with:
+      java-version: '17'
+      environment: 'dev'
