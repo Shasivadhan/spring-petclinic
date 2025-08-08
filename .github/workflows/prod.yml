@@ -1,0 +1,11 @@
+name: Build - Production Environment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  prod-build:
+    uses: ./.github/workflows/ci-template.yml
+    with:
+      java-version: '17'
+      environment: 'prod'
